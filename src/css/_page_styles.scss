@@ -11,165 +11,208 @@
 
 // Giving the Initial Page Colors and Styles
 
-.main-container,
-.game-container {
-    background-color: $hilight-color;
+body {
+  text-align: center;
+  background-image: url("../img/crossword.png");
+}
+
+hr {
+  width: 66.666%;
+  margin-bottom: 1.2em;
+}
+
+.product-container {
+  display: inline-block;
+  position: relative;
+  width: 66%;
+  margin-top: 1em;
+  margin-left: 1em;
+  max-width: 418px;
+  display: inline-block;
+  @media only screen and (max-width: 800px) {
+    width: 50%;
+  }
+  @media only screen and (max-width: 600px) {
     width: 100%;
-    position: absolute;
-    padding: 3em;
+    margin: 0;
+  }
 }
 
-.main-container {
-  height: 100%;
+.product-selection {
+  border: 5px solid #4c4c4e;
+  border-radius: 1em;
+  overflow: hidden;
+
 }
 
-.game-container:after {
+.product-image-container {
+  padding: .5em;
+  position: relative;
+  text-align: right;
+}
+.product-image-container:after {
   content: " ";
   display: block;
+  overflow: auto;
   height: 100%;
 }
 
-.game-wrapper {
-  background-color: $game-color;
-  padding-bottom: 2em;
+.product-image-front,
+.product-image-back,
+.product-image-placeholder {
+  width: 100%;
+
 }
 
-.game-head {
-  margin: 0 auto;
-  text-align: center;
+.product-image-placeholder {
+  display: hidden;
+  opacity: 0;
 }
 
-.game-container {
-  background-color: $game-color;
+.product-image-front,
+.product-image-back {
+  position: absolute;
+  top: .5em;
+  left: 0em;
 }
 
-
-// Lay out game options using translate to help center the main options
-.game-options, .new-game-container {
-  text-align: center;
+.product-options-nav {
+  overflow: auto;
 }
 
-// Absolute positioning trick for centering an item
-.game-options,
-.game-icon {
+.product-option {
+  width: 20%;
+  padding-top: 20%;
+  display: inline-block;
+  float: left;
+  position: relative;
+  background-color: #eee;
+  font-size: 1.25em;
+}
+
+.product-option > label,
+.product-option > select,
+.product-option > button,
+.icon-heart-1,
+.icon-switch {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
 }
 
-
-
-// Game Choice Controls have 2 classes. One for basic styling and one to delimit the options.
-.user-choice {
-  border: 5px solid white;
-  margin-top: 1em;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-.twist-counter {
-  transform: perspective(200px) rotateY(-15deg);
-}
-
-.twist-clock {
-  transform: perspective(200px) rotateY(15deg);
-}
-
-// Adding hover states to buttons
-.user-choice:hover {
-  background-color: #fff;
-  h4 {
-    color: $hilight-color;
-  }
-}
-
-.game-icons {
-  float: left;
-}
-
-.time-counter {
-  float: right;
-}
-
-.game-title {
-  position: relative;
-}
-
-.quit-game {
-  display: none;
-}
-
-.game-title:hover {
-  .quit-game {
-    display: block;
-    position: absolute;
-    top: 1;
-    bottom: 1;
-    left: 1;
-    right: 1;
-  }
-}
-
-// Styling the Cards
-.game-board {
-  margin-top: 7em;
+.product-option > label,
+.product-option > select,
+.product-option > button {
   width: 100%;
+  height: 100%;
 }
 
-.game-tile {
-  font-size: 2em;
-  position: relative;
-  display: inline-block;
-  border-right: 0;
-  border-bottom: 0;
-  float: left;
-
+.product-options-nav:after {
+  content: "";
 }
 
-.easy-tile {
-  width: 16.666%;
-  padding-top: 16.666%;
-
-  // making adjustments for page width changes
-  @media only screen and (max-width: 600px) {
-    width: 33.333%;
-    padding-top: 33.333%;
-    font-size: 1.5em;
-  }
-}
-
-.hard-tile {
-  width: 12.5%;
-  padding-top: 12.5%;
-  font-size: 1.5em;
-  @media only screen and (max-width: 600px) {
-    width: 25%;
-    padding-top: 25%;
-    font-size: 1em;
-  }
-}
-
-
-.game-checkbox {
-  position: absolute;
-  height: 0;
+.product-option:after {
   width: 0;
-  z-index: -2;
+  padding-top: 100%;
+  position: absolute;
+}
+
+footer {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  padding: 2em;
+  background-color: #eee;
+  width: 100%;
+  vertical-align: middle;
+}
+
+// Styling the buttons and inputs for the Product Options
+
+select {
+  -webkit-appearance: none;
+  border: 0;
+  margin-left: 25%;
+  &:focus {
+    outline: none;
+
+    border-radius: 0;
+  }
+
+  option {
+    text-align: center;
+    display: list-item;
+    padding: 0;
+    margin: 0;
+    font-size: 2em;
+  }
+}
+
+.checkbox {
   opacity: 0;
 }
 
-.game-card {
-  display: block;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  right: 1px;
-  bottom: 1px;
-  border-radius: .25em;
-  background: #7986cb;
-
+.add-to-cart {
+  border: none;
+  background-color: transparent;
 }
+
+
+.checkbox + .check-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eee;
+}
+
+.checkbox:checked + .check-btn {
+  width: 100%;
+  height: 100%;
+
+  .icon-heart-1 {
+    color: pink;
+    font-size: 2em;
+  }
+}
+
+.checkbox:not(:checked) + span {
+  background: transparent;
+}
+
+.product-size,
+.product-color {
+  background-color: transparent;
+}
+
+// Styling the Product Title
+
+.product-name,
+.product-price {
+  margin-top: .5em;
+}
+
+.product-name {
+  float: left;
+  padding-top: .5em;
+}
+.product-price {
+  float: right;
+  padding: .5em;
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 50%;
+}
+.product-price:after {
+  content: " ";
+  float: left;
+  width: 0;
+  padding-top: 100%;
+}
+
 
 
 /*                    *\
