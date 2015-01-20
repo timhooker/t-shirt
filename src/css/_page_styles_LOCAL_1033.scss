@@ -14,15 +14,14 @@
 body {
   text-align: center;
   background-image: url("../img/crossword.png");
-  }
+}
 
 .main-container {
   width: 66%;
   margin: 0 auto;
-  padding-bottom: 10em;
-  @media only screen and (max-width: 768px) {
+  margin-bottom: 7em;
+  @media only screen and (max-width: 600px) {
     width: 100%;
-    margin: 0;
   }
 }
 
@@ -34,16 +33,16 @@ hr {
 .product-container {
   display: inline-block;
   position: relative;
-  width: 30%;
+  width: 33%;
   margin-top: 1em;
   margin-left: 1em;
   margin-bottom: 2em;
   max-width: 418px;
   display: inline-block;
-  @media only screen and (max-width: 1024px) {
-    width: 45%;
+  @media only screen and (max-width: 800px) {
+    width: 50%;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     margin: 0 0 2em;
 }
@@ -185,6 +184,7 @@ select {
 
   .icon-heart-1 {
     color: pink;
+    font-size: 2em;
   }
 }
 

@@ -26,6 +26,15 @@ body {
   }
 }
 
+.main-container {
+  width: 66%;
+  margin: 0 auto;
+  margin-bottom: 7em;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
 hr {
   width: 66.666%;
   margin-bottom: 1.2em;
@@ -34,7 +43,11 @@ hr {
 .product-container {
   display: inline-block;
   position: relative;
+<<<<<<< HEAD
+  width: 33%;
+=======
   width: 30%;
+>>>>>>> gh-pages
   margin-top: 1em;
   margin-left: 1em;
   margin-bottom: 2em;
